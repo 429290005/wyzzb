@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="4dp"
+
+	    android:background="#FFFFFF"
+        android:orientation="vertical"
+	    >
+	    <TextView 
+	        android:id="@+id/title"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+            android:textColor="@color/base_color_text_black"
+	        android:text="哈尔滨工业大学2016年专转本招生人数"
+			android:textSize="@dimen/title_size"
+	        android:layout_centerVertical="true"
+	        />
+	<TextView
+		android:id="@+id/paperabstract"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+         android:layout_marginTop="3dp"
+		android:textColor="@color/base_color_text_gray"
+		android:text="哈尔滨工业大学2016年专转本招生人数基本结束，招录28人，实际分数线目前还没有下来，请同学们做好复试准备"
+		android:textSize="@dimen/paperabstract_size"
+		android:layout_centerVertical="true"
+		/>
+	<TextView
+		android:id="@+id/time"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+
+		android:text="2016-01-11"
+		android:layout_marginTop="3dp"
+		android:textColor="@color/base_color_text_gray"
+		android:textSize="@dimen/paperabstract_size"
+		android:layout_centerVertical="true"
+		/>
+	</LinearLayout>

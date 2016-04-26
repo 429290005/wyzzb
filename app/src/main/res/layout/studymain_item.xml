@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/linlay_seniorhelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:src="@drawable/statistic"
+            android:id="@+id/image"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="4dp">
+            <TextView
+                android:id="@+id/tv_seniorhelp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/base_color_text_black"
+                android:text="学长辅导"
+                android:textSize="18sp"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:id="@+id/tv_seniorhelpdsc"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/base_color_text_gray"
+                android:text="专转本一对一辅导，为你考上好学校加油"
+                android:textSize="@dimen/paperabstract_size"
+                android:layout_centerVertical="true"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

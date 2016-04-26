@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="18dp">
+
+        <LinearLayout
+            android:id="@+id/ly_base"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="4dp"
+                android:textColor="@color/share_dialog_item"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:drawableTop="@drawable/download"
+                android:text="@string/fragment_video_videodownload" />
+        </LinearLayout>
+        <include
+            android:id="@+id/fragment_banner"
+            layout="@layout/divide_2"
+            />
+        <LinearLayout
+            android:id="@+id/ly_intensify"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="4dp"
+                android:textColor="@color/share_dialog_item"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:drawableTop="@drawable/share_icon_copy_link_selector"
+                android:text="@string/fragment_video_videonotes" />
+        </LinearLayout>
+        <include
+            android:id="@+id/fragment_banner"
+            layout="@layout/divide_2"
+            />
+        <LinearLayout
+            android:id="@+id/ly_sprint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="4dp"
+                android:textColor="@color/share_dialog_item"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:drawableTop="@drawable/exam_course"
+                android:text="@string/fragment_video_videoexercise"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

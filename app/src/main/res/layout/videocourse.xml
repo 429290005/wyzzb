@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/white"
+             >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_light"
+        android:minHeight="200dp"
+        android:id="@+id/video_fy">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="38dip"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dip"
+            android:orientation="horizontal"
+            >
+            <RelativeLayout
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.0">
+                <TextView
+                    android:id="@+id/actionbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center"
+                    android:text="第一章 函数的定义"
+                    />
+                <ImageView
+                    android:id="@+id/left_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/back"
+                    android:gravity="center"
+
+                    />
+                <TextView
+                    android:id="@+id/actionbar_right_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                   android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@android:color/white"
+                    android:text="主讲：杨超"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/play_btn"
+                android:layout_gravity="center"
+                android:text="开通VIP"
+                android:layout_width="130dip"
+                android:layout_height="30.0dip"
+                android:background="@drawable/darkred_btn_bg"
+                android:textColor="@color/base_color_text_white"
+                 />
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dip"
+                android:textColor="@color/share_dialog_item"
+                android:text="微课为专转本VIP专享服务，请点击开通"/>
+        </LinearLayout>
+
+
+        <com.song.zzb.wyzzb.ui.view.SuperVideoPlayer
+            android:id="@+id/video_player_item_1"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:visibility="gone">
+        </com.song.zzb.wyzzb.ui.view.SuperVideoPlayer>
+
+    </FrameLayout>
+
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/video_fy">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <include layout="@layout/activity_main_top_tab"
+                 android:id="@+id/head"
+                />
+        <RelativeLayout
+            android:id="@+id/fragment1_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/head"
+            />
+
+    </LinearLayout>
+</ScrollView>
+
+
+
+
+</RelativeLayout>

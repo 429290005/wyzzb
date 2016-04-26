@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:background="@color/color_green_bg3"
+    >
+    <include
+        android:id="@+id/fragment_actionbar"
+        layout="@layout/actionbar"
+        />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dip"
+        >
+
+        <LinearLayout
+            android:id="@+id/ly_base"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="5dip"
+            android:background="@color/color_green_bg"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:textColor="@color/base_color_text_white"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="3dip"
+                android:drawableTop="@drawable/closed"
+                android:text="@string/coursedetail_base" />
+        </LinearLayout>
+        <include
+            android:id="@+id/fragment_banner"
+            layout="@layout/divide_2"
+            />
+        <LinearLayout
+            android:id="@+id/ly_intensify"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/color_green_bg2"
+            android:gravity="center_horizontal"
+            android:layout_marginRight="5dip"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:textColor="@color/base_color_text_white"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:layout_marginRight="3dip"
+                android:layout_marginTop="18dip"
+                android:drawableTop="@drawable/network"
+                android:text="@string/coursedetail_intensify" />
+        </LinearLayout>
+        <include
+            android:id="@+id/fragment_banner"
+            layout="@layout/divide_2"
+            />
+        <LinearLayout
+            android:id="@+id/ly_sprint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/color_green_bg1"
+
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:textColor="@color/base_color_text_white"
+                android:gravity="center"
+                android:textSize="14sp"
+
+                android:layout_marginTop="18dip"
+                android:drawableTop="@drawable/variant"
+                android:text="@string/coursedetail_sprint"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <include
+        android:id="@+id/fragment_banner"
+        layout="@layout/divide_15_top_bottom"
+        />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/base_color_text_white">
+
+        <LinearLayout
+            android:id="@+id/ly_share_weichat_circle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="4dp"
+                android:textColor="@color/share_dialog_item"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:layout_marginTop="18dip"
+                android:drawableTop="@drawable/share_icon_wechatfriends"
+                android:text="@string/coursdetail_6" />
+        </LinearLayout>
+        <include
+            android:id="@+id/fragment_banner"
+            layout="@layout/divide_2"
+            />
+        <LinearLayout
+            android:id="@+id/ly_share_weichat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="4dp"
+                android:textColor="@color/share_dialog_item"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:layout_marginTop="18dip"
+                android:drawableTop="@drawable/info_check"
+                android:text="@string/coursdetail_1" />
+        </LinearLayout>
+        <include
+            android:id="@+id/fragment_banner"
+            layout="@layout/divide_2"
+            />
+        <LinearLayout
+            android:id="@+id/ly_share_sina_weibo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="4dp"
+                android:textColor="@color/share_dialog_item"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:layout_marginTop="18dip"
+                android:drawableTop="@drawable/inquiry_zp"
+                android:text="@string/coursdetail_2" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <include
+        android:id="@+id/fragment_banner"
+        layout="@layout/divide_1_12"
+        />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        android:background="@color/base_color_text_white"
+
+        >
+
+        <LinearLayout
+            android:id="@+id/ly_share_qq"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="4dp"
+                android:textColor="@color/share_dialog_item"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:layout_marginTop="18dip"
+                android:drawableTop="@drawable/service_icon"
+                android:text="@string/coursdetail_3" />
+        </LinearLayout>
+        <include
+            android:id="@+id/fragment_banner"
+            layout="@layout/divide_2"
+            />
+        <LinearLayout
+            android:id="@+id/ly_share_copy_link"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="4dp"
+                android:textColor="@color/share_dialog_item"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:layout_marginTop="18dip"
+                android:drawableTop="@drawable/share_icon_copy_link_selector"
+                android:text="@string/coursdetail_5" />
+        </LinearLayout>
+        <include
+            android:id="@+id/fragment_banner"
+            layout="@layout/divide_2"
+            />
+        <LinearLayout
+            android:id="@+id/ly_share_more_option"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="4dp"
+                android:textColor="@color/share_dialog_item"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:layout_marginTop="18dip"
+                android:drawableTop="@drawable/share_icon_more_selector"
+                android:text="@string/coursdetail_4" />
+        </LinearLayout>
+    </LinearLayout>
+    <include
+
+        android:id="@+id/fragment_banner"
+        layout="@layout/divide_15_top_bottom"
+        />
+    <RelativeLayout
+        android:id="@+id/nodesFavorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/common_item_click_selector"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="科目论坛"
+            android:textColor="@color/color_bottom_text_normal"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/countOfNodes"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:text="10"
+            android:textColor="@color/color_bottom_text_normal"
+            android:textSize="13sp" />
+    </RelativeLayout>
+    <include layout="@layout/divide_1_12" />
+    <RelativeLayout
+        android:id="@+id/topicsFavorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/common_item_click_selector"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="习题解答"
+            android:textColor="@color/color_bottom_text_normal"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/countOfTopics"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:text="10"
+            android:textColor="@color/color_bottom_text_normal"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <include layout="@layout/divide_1_12" />
+</LinearLayout>

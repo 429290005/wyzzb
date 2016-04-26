@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white">
+    <RelativeLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/left_main_menu"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="@dimen/base_action_bar_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/home_item_color_bg"
+
+
+        >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/main_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_team"
+            android:text="@string/main_tiku"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/main_forum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_competition"
+
+            android:text="@string/main_luntan"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/main_learn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_main_class"
+
+            android:text="@string/main_learn"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:textSize="12sp"
+            />
+
+    </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+         <FrameLayout
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+
+         >
+            <TextView
+                android:id="@+id/main_me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/selector_message"
+                android:text="@string/main_me"
+                android:textColor="#666666"
+                android:gravity="center"
+                android:textSize="12sp"
+                />
+
+            <!--<TextView-->
+                <!--android:id="@+id/main_me"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:drawableTop="@drawable/selector_message"-->
+                <!--android:text="@string/main_me"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:layout_centerInParent="true"  -->
+                <!--android:textColor="#666666"-->
+                <!-- -->
+                <!--android:textSize="12sp"-->
+                <!--/>-->
+            <View
+                android:id="@+id/umeng_comm_badge_view"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="0dp"
+                android:background="@drawable/umeng_comm_circle_shape" />
+      </FrameLayout>
+        </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+</RelativeLayout>

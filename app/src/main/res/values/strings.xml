@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">转本帮</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <!-- 底部-->
+    <string name="main_zixun">资讯</string>
+    <string name="main_luntan">论坛</string>
+    <string name="main_me">我</string>
+    <string name="main_tiku">题库</string>
+    <string name="main_learn">学堂</string>
+    <string name="coursdetail_1">每日一练</string>
+    <string name="coursdetail_2">复习经验</string>
+    <string name="coursdetail_3">历年真题</string>
+    <string name="coursdetail_4">直播课</string>
+    <string name="coursdetail_5">名师模考</string>
+    <string name="coursdetail_6">精品图书</string>
+    <string name="coursedetail_base">基础课程</string>
+    <string name="coursedetail_intensify">强化课程</string>
+    <string name="coursedetail_sprint">冲刺课程</string>
+    <string name="fragment_video_videodownload">离线下载</string>
+    <string name="fragment_video_videonotes">讲义下载</string>
+    <string name="fragment_video_videoexercise">本节练习</string>
+    <string name="tiku_base">随机练习</string>
+    <string name="tiku_intensify">我的错题</string>
+    <string name="tiku_sprint">真题练习</string>
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+</resources>

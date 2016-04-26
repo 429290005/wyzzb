@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/base_color_text_white"
+    android:layout_marginBottom="48dp">
+    <include 
+        android:id="@+id/fragment_actionbar"
+        layout="@layout/actionbar"
+        />
+	<RelativeLayout 
+	    android:id="@+id/team_create"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="8dp"
+
+	    android:layout_margin="16dp"
+	    >
+	    <TextView 
+	        android:id="@+id/team_create_tips"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+
+	        android:text="呃呃呃"
+	        android:layout_centerVertical="true"
+	        />
+	    <ImageView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:scaleType="centerInside"
+
+	        android:layout_centerVertical="true"
+	        android:layout_alignParentRight="true"
+	        />
+	</RelativeLayout>
+	<TextView 
+	        android:id="@+id/team_create_leading"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="16dp"
+	        android:layout_marginRight="16dp"
+	        android:textColor="#989b9f"
+	        android:textSize="16sp"
+	        android:text="你好"
+	        />
+	<RelativeLayout 
+        android:id="@+id/search_team_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:background="@color/base_bg"
+        android:layout_margin="16dp"
+        >
+        <ImageButton 
+            android:id="@+id/search_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/base_bg"
+            android:layout_alignParentRight="true"
+
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            />
+        <EditText 
+            android:id="@+id/search_team_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_centerVertical="true"
+
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"
+            android:hint="输入内容"
+
+            android:background="@null"
+            />
+    </RelativeLayout>
+    <TextView 
+	        android:id="@+id/nearby_team_tips"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="16dp"
+	        android:textColor="#989b9f"
+	        android:textSize="16sp"
+	        android:text="sss"
+
+	        android:drawableLeft="@drawable/nearby_icon"
+	        android:drawablePadding="4dp"
+	        android:padding="4dp"
+	        android:paddingLeft="16dp"
+	        />
+
+    <com.song.zzb.wyzzb.util.xlistview.XListView
+        android:id="@+id/nearby_team_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="#D3D3D3"
+        android:dividerHeight="4px"
+
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:descendantFocusability="afterDescendants"
+        android:scrollbarStyle="outsideOverlay">
+    </com.song.zzb.wyzzb.util.xlistview.XListView>
+</LinearLayout>

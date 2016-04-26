@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="match_parent">
+    <!--<View-->
+          <!--android:layout_width="fill_parent"-->
+          <!--android:background="@color/color_green_bg3"-->
+          <!--android:layout_height="10dp" />-->
+
+    <RelativeLayout
+        android:id="@+id/user_layout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="2dp"
+            android:src="@drawable/shuxue" />
+
+        <TextView
+            android:id="@+id/tv_seniorhelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/image"
+            android:text="高等数学—基础"
+            android:textColor="@color/color_bottom_text_normal"
+            android:textSize="18sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/image"
+            android:layout_below="@+id/tv_seniorhelp">
+
+            <TextView
+                android:id="@+id/tv_seniorhelpdsc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/user_avatar"
+                android:text="10"
+                android:textColor="@color/color_bottom_text_press"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>
