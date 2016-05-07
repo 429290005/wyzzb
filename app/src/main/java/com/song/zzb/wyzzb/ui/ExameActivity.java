@@ -40,7 +40,7 @@ public class ExameActivity extends BaseActivity{
    private DeletableEditText det_answer_input;
     private RadioButton radioA,radioB,radioC,radioD;
     private RadioGroup radioGroup;
-    private TextView forword_btn,next_btn,tv_submittest,tv_addwrong,answer_tv,tv_explain_btn;//底部布局
+    private TextView forword_btn,next_btn,tv_submittest,tv_addwrong,answer_tv,tv_explain_btn,core_tv;//底部布局
     private LinearLayout ly_wrong,ly_title,ly_edt,sc_ly;
     public static final int TESTLIMIT = 100;
     boolean isHandIn;// 表示交卷后
@@ -55,6 +55,7 @@ public class ExameActivity extends BaseActivity{
     FileInputStream fis;
     FileOutputStream fos;
     private List<TiKuContent> tiKuContentList=new ArrayList<TiKuContent>();
+    private int[] value;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exame);
@@ -64,8 +65,12 @@ public class ExameActivity extends BaseActivity{
             mySelect[i]="";
             testAnswer[i]="";
         }
+        value = new int[2];
+        Bundle bundle= getIntent().getExtras();
+        value=bundle.getIntArray("value");
+        Log.i("value的值",value[0]+"///"+value[1]);
         //得到题库数据
-        queryAnswer(1);
+        queryAnswer(value[0], value[1]);
         forword_btn.setOnClickListener(new View.OnClickListener() {
             // 上一题
             @Override
@@ -277,6 +282,41 @@ public class ExameActivity extends BaseActivity{
         }
         return super.onKeyDown(keyCode, event);
     }
+    private void showScore() {
+        final Dialog builder = new Dialog(this, R.style.dialog);
+        builder.setContentView(R.layout.result_dialog);
+        TextView title = (TextView) builder.findViewById(R.id.dialog_title);
+        TextView content = (TextView) builder.findViewById(R.id.dialog_content);
+        if (resultInt == 100) {
+            content.setText("哇！满分！棒棒哒！");
+        } else{
+            content.setText("您的得分为"+resultInt);
+        }
+        final Button confirm_btn = (Button) builder
+                .findViewById(R.id.dialog_sure);
+        Button cancel_btn = (Button) builder.findViewById(R.id.dialog_cancle);
+        confirm_btn.setText("查看错题");
+        cancel_btn.setText("退出");
+        confirm_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    builder.dismiss();
+
+
+            }
+        });
+
+        cancel_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    finish();
+                    builder.dismiss();
+            }
+        });
+        builder.setCanceledOnTouchOutside(false);// 设置点击Dialog外部任意区域关闭Dialog
+        builder.show();
+    }
     // 弹出对话框通知用户答题时间到
     protected void showTimeOutDialog(final boolean flag, final String backtype) {
         final Dialog builder = new Dialog(this, R.style.dialog);
@@ -365,8 +405,8 @@ public class ExameActivity extends BaseActivity{
         for (int i = tiKuContentList.size()-1; i >= 0; i--) {
 
             //将正确答案存入testAnswer
-            if(!tiKuContentList.get(i).getAnswer().equals(""))
-             testAnswer[i]=tiKuContentList.get(i).getAnswer().trim();
+            if(!tiKuContentList.get(i).getAnswerCode().equals(""))
+             testAnswer[i]=tiKuContentList.get(i).getAnswerCode().trim();
             Log.i("testAnswer[i]my",testAnswer[i]+"/"+i+"/"+mySelect[i]);
 
 
@@ -393,21 +433,9 @@ public class ExameActivity extends BaseActivity{
         }
         initSubject();
     }
-    private void showScore() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("结果");
-        if (resultInt == 100) {
-            builder.setMessage("哇！满分！请继续保持");
-        } else if (resultInt >= 90) {
-            builder.setMessage("合格了！成绩为： " + resultInt + ",请再接再厉");
-        } else {
-            builder.setMessage("不合格！成绩为：" + resultInt + ",请继续努力");
-        }
-        builder.setPositiveButton("确定", null);
-        builder.create().show();
-    }
+
     private void initView(){
-        setUpTitle("计算机模拟试题一");
+        setUpTitle(getIntent().getExtras().getString("title"));
         setUpLeftMenu(1);
         Bundle bundle = getIntent().getExtras();
         if (bundle !=null){
@@ -432,6 +460,7 @@ public class ExameActivity extends BaseActivity{
         ly_wrong = (LinearLayout) findViewById(R.id.ly_wrong);//答案解析布局
         tv_addwrong = (TextView) findViewById(R.id.tv_addwrong);//加入错题库
         answer_tv = (TextView) findViewById(R.id.answer_tv);//解析，显示答案位置
+        core_tv = (TextView) findViewById(R.id.core_tv);
         cb1 = (CheckBox) findViewById(R.id.cb1);//复选框
         cb2 = (CheckBox) findViewById(R.id.cb2);
         cb3 = (CheckBox) findViewById(R.id.cb3);
@@ -487,14 +516,19 @@ public class ExameActivity extends BaseActivity{
             tv_addwrong.setText("移除错题库");
         }
     }
-    //得到模拟对应编号的模拟试题题目
-    protected void queryAnswer(int index ){
+    //得到模拟对应编号的模拟试题题目,试题类型为多少多少套题
+    protected void queryAnswer(int index,int type ){
         // TODO Auto-generated method stub
         BmobQuery<TiKuContent> tiKuContent = new BmobQuery<TiKuContent>();
+        //按照试题类型
+        tiKuContent.addWhereEqualTo("questiontype", type);
+        tiKuContent.addWhereGreaterThanOrEqualTo("indexID", (index - 1) * 100 + 1);//题号>=0      1  1 100  2 101 200 3 301 400
+         tiKuContent.addWhereLessThanOrEqualTo("indexID", (index - 1) * 100 + 100);//题号<=100
+        Log.i("indexID",""+(index - 1) * 100 + 1+"////"+(index - 1) * 100 + 100);
         //按照时间降序
         tiKuContent.order("indexID");
         //判断是否有缓存，该方法必须放在查询条件（如果有的话）都设置完之后再来调用才有效，就像这里一样。
-        boolean isCache = tiKuContent.hasCachedResult(this,TiKuContent.class);
+        boolean isCache = tiKuContent.hasCachedResult(this, TiKuContent.class);
         if(isCache){
             if(ActivityUtil.hasNetwork(this)){
                 tiKuContent.setCachePolicy(BmobQuery.CachePolicy.NETWORK_ELSE_CACHE);    // 如果没有缓存的话，则
@@ -514,9 +548,9 @@ public class ExameActivity extends BaseActivity{
                     problemLimit =tiKuContentList.size();
                     initSubject();
                     for (int i= 0;i<tiKuContentList.size();i++) {
-                        Log.i("tiku", "" +i+tiKuContentList.isEmpty() + "/" + tiKuContentList.get(i).getTitleSubject());
+                         Log.i("tiku", "" +i+tiKuContentList.isEmpty() + "/" + tiKuContentList.get(i).getTitleSubject());
 
-                    }
+                   }
                 }
             }
             @Override
@@ -552,10 +586,10 @@ public class ExameActivity extends BaseActivity{
                     tiKuContentList.addAll(data);
                     problemLimit =tiKuContentList.size();
                     initSubject();
-                    for (int i= 0;i<tiKuContentList.size();i++) {
-                        Log.i("tiku", "" +i+tiKuContentList.isEmpty() + "/" + tiKuContentList.get(i).getTitleSubject());
-
-                    }
+//                    for (int i= 0;i<tiKuContentList.size();i++) {
+//                        Log.i("tiku", "" +i+tiKuContentList.isEmpty() + "/" + tiKuContentList.get(i).getTitleSubject());
+//
+//                    }
                 }
             }
             @Override
@@ -581,17 +615,17 @@ public class ExameActivity extends BaseActivity{
                 cb4.setChecked(false);
             }
             tv_title.setText("\u0020" + tiKuContentList.get(curIndex).getTitleSubject());
-            tv_record.setText((curIndex + 1) + "/100");
+            tv_record.setText((curIndex + 1) + "/"+tiKuContentList.size());
             //判断是否交卷，交卷则显示答案显示答案
-            answer_tv.setText("正确答案为: " + tiKuContentList.get(curIndex).getAnswer());
-            answer_tv.setTextSize(16);
-            answer_tv.setTextColor(Color.RED);
+            answer_tv.setText(tiKuContentList.get(curIndex).getAnswer());
+            core_tv.setText(tiKuContentList.get(curIndex).getCore());
+//            answer_tv.setTextColor(Color.RED);
             tv_explain.setText(tiKuContentList.get(curIndex).getExplain());
             //0单选，1多选，2判断，3填空，4问答
 //            多选
             if (tiKuContentList.get(curIndex).getSubjectType() == 0) {
                 // 单选择题
-                tv_type.setText("--单选题（本题1分，共30题）");
+                tv_type.setText("--单选题（本题1分，共50题）");
                 ToastUtil.showToast(getApplicationContext(), "单选题" + tiKuContentList.get(curIndex).getSubjectType());
                 radioA.setText("A." + tiKuContentList.get(curIndex).getOptionA());
                 radioB.setText("B." + tiKuContentList.get(curIndex).getOptionB());
@@ -628,7 +662,7 @@ public class ExameActivity extends BaseActivity{
                 ly_edt.setVisibility(View.GONE);
                 //判断
             } else if (tiKuContentList.get(curIndex).getSubjectType() == 2) {
-                tv_type.setText("--判断题（本题1分，共15题）");
+                tv_type.setText("--判断题（本题1分，共20题）");
                 ToastUtil.showToast(getApplicationContext(), "判断题" + tiKuContentList.get(curIndex).getSubjectType());
                 radioA.setText("对");
                 radioB.setText("错");
@@ -645,7 +679,7 @@ public class ExameActivity extends BaseActivity{
                 ly_edt.setVisibility(View.GONE);
             } else if (tiKuContentList.get(curIndex).getSubjectType() == 3) {
                 ly_edt.setVisibility(View.VISIBLE);
-                tv_type.setText("--填空题（本题1.5分，共20题）");
+                tv_type.setText("--填空题（本题1分，共20题）");
                 radioA.setVisibility(View.GONE);
                 radioB.setVisibility(View.GONE);
                 radioC.setVisibility(View.GONE);
@@ -660,7 +694,7 @@ public class ExameActivity extends BaseActivity{
                  ToastUtil.showToast(getApplicationContext(),"填空题"+tiKuContentList.get(curIndex).getSubjectType());
             }
             //初始化已做的题目
-            Log.i("mySelect[curIndex]的值是",""+mySelect[curIndex]);
+//            Log.i("mySelect[curIndex]的值是",""+mySelect[curIndex]);
             switch (mySelect[curIndex]) {
                 case "1":
                     radioA.setChecked(true);

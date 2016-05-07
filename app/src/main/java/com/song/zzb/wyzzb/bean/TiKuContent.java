@@ -11,6 +11,24 @@ public class TiKuContent extends BmobObject{
     private String answer;//答案
     private String optionA;//选项
 
+    public String getCore() {
+        return core;
+    }
+
+    public void setCore(String core) {
+        this.core = core;
+    }
+
+    private String core;//考点
+    public String getAnswerCode() {
+        return answerCode;
+    }
+
+    public void setAnswerCode(String answerCode) {
+        this.answerCode = answerCode;
+    }
+
+    private String answerCode;//答案编码
     public String getOptionB() {
         return optionB;
     }
@@ -87,8 +105,15 @@ public class TiKuContent extends BmobObject{
     private String optionC;
     private String optionD;
     private Integer subjectType;//题目类型
+
+    public Integer getQuestiontype() {
+        return questiontype;
+    }
+
+    public void setQuestiontype(Integer questiontype) {
+        this.questiontype = questiontype;
+    }
+
+    private Integer questiontype;//试题类型
     private String explain;//答案解析
-
-
-
 }

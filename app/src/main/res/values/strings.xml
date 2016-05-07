@@ -21,9 +21,10 @@
     <string name="fragment_video_videodownload">离线下载</string>
     <string name="fragment_video_videonotes">讲义下载</string>
     <string name="fragment_video_videoexercise">本节练习</string>
-    <string name="tiku_base">随机练习</string>
+    <string name="tiku_base">章节练习</string>
     <string name="tiku_intensify">我的错题</string>
-    <string name="tiku_sprint">真题练习</string>
+    <string name="tiku_sprint">历年真题</string>
+    <string name="tiku_sprint1">必背考点</string>
     <string name="xlistview_header_hint_normal">下拉刷新</string>
     <string name="xlistview_header_hint_ready">松开刷新数据</string>
     <string name="xlistview_header_hint_loading">正在加载...</string>

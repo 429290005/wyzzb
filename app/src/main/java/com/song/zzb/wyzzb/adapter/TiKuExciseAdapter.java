@@ -64,13 +64,13 @@ public class TiKuExciseAdapter extends BaseAdapter {
 
         TiKuList news = this.news.get(position);
 
-        Log.i("user", "USER avatar IS NULL" + news.toString()+"/"+news.getKuTitle());
+        Log.i("user", "USER avatar IS NULL" + news.getPerNumber()+"/"+news.getKuTitle());
         if(news.getKuTitle()!=null){
             viewHolder.title.setText(news.getKuTitle());}
         if(news.getDifficulty()!=null){
             viewHolder.dsc_nan.setText(news.getDifficulty());}
         if(news.getPerNumber()!=null){
-            viewHolder.dsc_tv.setText(news.getPerNumber());}
+            viewHolder.dsc_tv.setText(news.getPerNumber().toString());}
 
         return convertView;
     }

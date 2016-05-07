@@ -221,6 +221,13 @@
                         android:layout_marginLeft="8dip"
                         />
                     <TextView
+                        android:id="@+id/core_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="center"
+                        android:layout_marginLeft="8dip"
+                        />
+                    <TextView
                         android:id="@+id/tv_explain"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

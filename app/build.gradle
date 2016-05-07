@@ -4,6 +4,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
+
     defaultConfig {
         applicationId "com.song.zzb.wyzzb"
         minSdkVersion 15
@@ -21,7 +22,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile files('libs/BmobSDK_V3.4.5_1111.jar')
+    compile 'cn.bmob.android:bmob-sdk:3.4.6'
     compile files('libs/filechoose.jar')
     compile files('libs/okhttp-2.4.0.jar')
     //    testCompile 'junit:junit:4.12'

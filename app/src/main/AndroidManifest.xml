@@ -36,11 +36,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
 
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
         android:name="com.song.zzb.wyzzb.util.MyApplication">
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".ui.WebViewActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,6 +55,7 @@
         <activity android:name=".ui.StudyCourseDetail"/>
         <activity android:name=".ui.MyWrongActivity"/>
         <activity android:name=".ui.CourseBaseExpandableList"/>
+        <activity android:name=".ui.TiKuListActivity"/>
         <activity android:name=".ui.CourseIntenseExpandableList"/>
         <activity android:name=".ui.ExameActivity"/>
         <activity android:name=".ui.ComputerTikuActivity"/>

@@ -8,16 +8,33 @@
         android:id="@+id/fragment_banner"
         layout="@layout/actionbar"
         />
-    <include
-        android:id="@+id/fragment_banner"
-        layout="@layout/divide_h_10"
-        />
+
     <ScrollView android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+                android:layout_height="fill_parent"
+                android:scrollbars="none">
      <LinearLayout
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/base_color_text_white">
+        <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="最系统的计算机复习框架 | 权威辅导题库 "
+               android:layout_marginTop="5dp"
+               android:layout_marginBottom="5dp"
+               android:textColor="@color/share_dialog_item"
+               android:drawableLeft="@drawable/leadpencil"
+               android:drawablePadding="2dp"
+               android:textSize="13sp"/>
+         </LinearLayout>
+         <include
+             android:id="@+id/fragment_banner"
+             layout="@layout/divide_1_12"
+             />
          <LinearLayout
              android:layout_width="fill_parent"
              android:layout_height="wrap_content"
@@ -37,12 +54,13 @@
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
                      android:drawablePadding="4dp"
-                     android:textColor="@color/share_dialog_item"
+
                      android:gravity="center"
-                     android:textSize="14sp"
-                     android:layout_marginTop="18dp"
-                     android:layout_marginBottom="18dp"
+                     android:textSize="12sp"
+                     android:layout_marginTop="14dp"
+                     android:layout_marginBottom="14dp"
                      android:drawableTop="@drawable/share_icon_wechatfriends"
+
                      android:text="@string/tiku_base" />
              </LinearLayout>
              <include
@@ -62,11 +80,11 @@
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
                      android:drawablePadding="4dp"
-                     android:textColor="@color/share_dialog_item"
+
                      android:gravity="center"
-                     android:textSize="14sp"
-                     android:layout_marginTop="18dp"
-                     android:layout_marginBottom="18dp"
+                     android:textSize="12sp"
+                     android:layout_marginTop="14dp"
+                     android:layout_marginBottom="14dp"
                      android:drawableTop="@drawable/share_icon_copy_link_selector"
                      android:text="@string/tiku_intensify" />
              </LinearLayout>
@@ -87,26 +105,157 @@
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
                      android:drawablePadding="4dp"
-                     android:textColor="@color/share_dialog_item"
+
                      android:gravity="center"
-                     android:textSize="14sp"
-                     android:layout_marginTop="18dp"
-                     android:layout_marginBottom="18dp"
+                     android:textSize="12sp"
+                     android:layout_marginTop="14dp"
+                     android:layout_marginBottom="14dp"
                      android:drawableTop="@drawable/share_icon_more_selector"
                      android:text="@string/tiku_sprint"
+                     />
+             </LinearLayout>
+             <include
+                 android:id="@+id/fragment_banner"
+                 layout="@layout/divide_2"
+                 />
+             <LinearLayout
+                 android:id="@+id/ly_sprint1"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:background="@color/base_color_text_white"
+                 android:gravity="center_horizontal"
+                 android:orientation="vertical">
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:drawablePadding="4dp"
+
+                     android:gravity="center"
+                     android:textSize="12sp"
+                     android:layout_marginTop="14dp"
+                     android:layout_marginBottom="14dp"
+                     android:drawableTop="@drawable/filepdf"
+                     android:text="@string/tiku_sprint1"
                      />
              </LinearLayout>
          </LinearLayout>
 
          <include
              android:id="@+id/fragment_banner"
-             layout="@layout/divide_h_10"
+             layout="@layout/divide_h_8"
              />
+         <RelativeLayout
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:background="@color/base_color_text_white">
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="基础模拟试题"
+                 android:layout_marginTop="5dp"
+                 android:layout_marginBottom="5dp"
+                 android:textColor="@color/share_dialog_item"
+                 android:drawableLeft="@drawable/leadpencil"
+                 android:drawablePadding="2dp"
+                 android:textSize="13sp"/>
+             <TextView
+                 android:id="@+id/study_tv"
+                 android:layout_alignParentRight="true"
+                 android:layout_centerVertical="true"
+                 android:layout_width="wrap_content"
+                 android:layout_marginRight="8dp"
+                 android:layout_height="wrap_content"
+                 android:text="更多"
+                 android:textColor="@color/color_theme"
+                 android:textSize="13sp"
+                 />
+         </RelativeLayout>
          <com.song.zzb.wyzzb.util.xlistview.XListView
              android:layout_width="fill_parent"
              android:layout_height="wrap_content"
              android:id="@+id/list_study"
             android:scrollbars="none"
+             >
+         </com.song.zzb.wyzzb.util.xlistview.XListView>
+         <include
+             android:id="@+id/fragment_banner"
+             layout="@layout/divide_h_8"
+             />
+
+         <RelativeLayout
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:background="@color/base_color_text_white">
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="强化模拟试题"
+                 android:layout_marginTop="5dp"
+                 android:layout_marginBottom="5dp"
+                 android:textColor="@color/share_dialog_item"
+                 android:drawableLeft="@drawable/leadpencil"
+                 android:drawablePadding="2dp"
+                 android:textSize="13sp"/>
+             <TextView
+                 android:id="@+id/intense_tv"
+                 android:layout_alignParentRight="true"
+                 android:layout_centerVertical="true"
+                 android:layout_width="wrap_content"
+                 android:layout_marginRight="8dp"
+                 android:layout_height="wrap_content"
+                 android:text="更多"
+                 android:textColor="@color/color_theme"
+                 android:textSize="13sp"
+                 />
+         </RelativeLayout>
+         <com.song.zzb.wyzzb.util.xlistview.XListView
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/list_study_intense"
+             android:scrollbars="none"
+             >
+         </com.song.zzb.wyzzb.util.xlistview.XListView>
+         <include
+             android:id="@+id/fragment_banner"
+             layout="@layout/divide_h_8"
+             />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/base_color_text_white"
+             >
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="冲刺模拟试题"
+                 android:layout_marginTop="5dp"
+                 android:layout_marginBottom="5dp"
+                 android:textColor="@color/share_dialog_item"
+                 android:drawableLeft="@drawable/leadpencil"
+                 android:drawablePadding="2dp"
+                 android:textSize="13sp"/>
+
+            <TextView
+                      android:id="@+id/sprint_tv"
+                      android:layout_alignParentRight="true"
+                      android:layout_centerVertical="true"
+                      android:layout_width="wrap_content"
+                      android:layout_marginRight="8dp"
+                      android:layout_height="wrap_content"
+                      android:text="更多"
+                      android:textColor="@color/color_theme"
+                      android:textSize="13sp"
+                 />
+        </RelativeLayout>
+         <com.song.zzb.wyzzb.util.xlistview.XListView
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/list_study_sprint"
+             android:scrollbars="none"
              >
          </com.song.zzb.wyzzb.util.xlistview.XListView>
      </LinearLayout>
